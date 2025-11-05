@@ -1,40 +1,49 @@
 // ===== HAMBURGER MENU =====
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-const dropdowns = document.querySelectorAll('.dropdown');
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  const dropdowns = document.querySelectorAll('.dropdown');
 
-// Toggle mobile menu
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('active');
-});
+  // Toggle mobile menu
+  if (hamburger) {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  }
 
-// Close menu when clicking on a link (except dropdown buttons)
-navLinks.querySelectorAll('a:not(.dropbtn)').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('active');
+  // Close menu when clicking on a link (except dropdown buttons)
+  navLinks.querySelectorAll('a:not(.dropbtn)').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
   });
-});
 
-// Handle dropdown clicks on mobile
-dropdowns.forEach(dropdown => {
-  const dropbtn = dropdown.querySelector('.dropbtn');
+  // Handle dropdown clicks on mobile
+  dropdowns.forEach(dropdown => {
+    const dropbtn = dropdown.querySelector('.dropbtn');
+    
+    dropbtn.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+      }
+    });
+  });
 
-  dropbtn.addEventListener('click', (e) => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      dropdown.classList.toggle('active');
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (navLinks && hamburger) {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+      }
     }
   });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-    hamburger.classList.remove('active');
-    navLinks.classList.remove('active');
-  }
 });
 
 // ===== CAROUSEL =====
@@ -45,7 +54,6 @@ const imageSources = [
   { src: "./images/slide-3.png", alt: "Image 3" },
   { src: "./images/slide-4.png", alt: "Image 4" },
   { src: "./images/slide-5.png", alt: "Image 5" },
-  // You can easily add more images here!
 ];
 
 // 2. DOM Elements
@@ -57,10 +65,8 @@ function createCarouselElements() {
   let dotsHTML = '';
 
   imageSources.forEach((image, index) => {
-    // Determine if this is the first slide/dot to apply the 'active' class
     const isActive = index === 0 ? 'active' : '';
 
-    // Generate Slide HTML
     slidesHTML += `
       <div class="slide ${isActive}">
         <img src="${image.src}" alt="${image.alt}">
@@ -72,24 +78,27 @@ function createCarouselElements() {
     `;
   });
 
-  // Insert the generated HTML into the DOM
   carouselContainer.innerHTML = slidesHTML;
   indicatorsContainer.innerHTML = dotsHTML;
 }
 
-// Execute the generation function
 createCarouselElements();
 
 let slideIndex = 1;
+let autoPlayInterval;
 
 // Function for next/previous controls
 function changeSlide(n) {
+  clearInterval(autoPlayInterval); // Stop auto-play when user manually changes slide
   showSlides(slideIndex += n);
+  startAutoPlay(); // Restart auto-play
 }
 
 // Function for indicator dots
 function currentSlide(n) {
+  clearInterval(autoPlayInterval);
   showSlides(slideIndex = n);
+  startAutoPlay();
 }
 
 function showSlides(n) {
@@ -114,6 +123,30 @@ function showSlides(n) {
   dots[slideIndex - 1].classList.add('active');
 }
 
+// Auto-play functionality
+function autoPlay() {
+  slideIndex++;
+  showSlides(slideIndex);
+}
+
+function startAutoPlay() {
+  autoPlayInterval = setInterval(autoPlay, 4000); // Change slide every 4 seconds
+}
+
+// Start auto-play when page loads
+startAutoPlay();
+
+// Pause auto-play when user hovers over carousel (optional but user-friendly)
+if (carouselContainer) {
+  carouselContainer.addEventListener('mouseenter', () => {
+    clearInterval(autoPlayInterval);
+  });
+
+  carouselContainer.addEventListener('mouseleave', () => {
+    startAutoPlay();
+  });
+}
+
 // ===== PRODUCTS =====
 const products = [
   { image: "./images/product-1.png", name: "Micro Pulverizer" },
@@ -125,19 +158,22 @@ const products = [
   { image: "./images/product-7.png", name: "Flour Mixing Machine" },
   { image: "./images/product-8.png", name: "Multi Grain Seeds Cleaning Plant" },
   { image: "./images/product-9.png", name: "Multipurpose Combo Machine" },
-  { image: "./images/product-10.png", name: "Packing Machine" }
+  { image: "./images/product-10.png", name: "Packing Machine" },
 ];
 
-products.forEach((product) => {
-  const productElement = document.createElement('div');
-  productElement.className = 'product';
-  productElement.innerHTML = `
-    <div class="product-card">
-      <img src="${product.image}" alt="${product.name}" />
-      <h3>${product.name}</h3>
-      <a href="#">View Detail</a>
-    </div>
-  `;
-  const productsContainer = document.querySelector('.products-container');
-  productsContainer.appendChild(productElement);
-});
+const productsContainer = document.querySelector('.products-container');
+
+if (productsContainer) {
+  products.forEach((product) => {
+    const productElement = document.createElement('div');
+    productElement.className = 'product';
+    productElement.innerHTML = `
+      <div class="product-card">
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <a href="#">View Detail</a>
+      </div>
+    `;
+    productsContainer.appendChild(productElement);
+  });
+}
