@@ -34,63 +34,32 @@
   font-family: "abel", sans-serif;
 }
 
-/* Header */
 header {
   position: fixed;
   width: 100%;
   background-color: #fff;
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
   z-index: 100;
-
+  
   nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(1rem, 3vw, 2rem);
-    padding: 1rem clamp(1rem, 5vw, 4rem);
-
+    gap: 2rem;
+    padding: 1rem 4rem;
+    
     img {
-      width: clamp(5rem, 8vw, 6.3rem);
+      width: 6.3rem;
     }
   }
 }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  z-index: 101;
-}
-
-.hamburger span {
-  width: 28px;
-  height: 3px;
-  background-color: #333;
-  transition: all 0.3s ease;
-  border-radius: 3px;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(8px, -8px);
-}
-
-/* Navigation */
 ul {
   list-style-type: none;
   overflow: hidden;
   display: flex;
-  gap: clamp(1rem, 2.5vw, 2rem);
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  gap: 2rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -133,23 +102,30 @@ li.dropdown {
 }
 
 .carousel-container {
-  margin-top: 2rem;
-  padding-top: 12rem;
+  margin-top: 20vw;
 }
 
-/* About Section */
+/* ? About Section */
+.about-content h1 {
+  font-family: dm sans, sans-serif;
+  font-weight: 600;
+}
+
+/* We add a class to the section for easier targeting and padding */
 .about-section {
-  padding: clamp(3rem, 10vw, 5rem) 0;
-  background-color: #fff;
+  padding: 80px 0; /* Spacing above and below the section */
+  background-color: #fff; /* Assuming a white background */
 }
 
 .about-container {
   display: flex;
   align-items: center;
-  gap: clamp(2rem, 8vw, 6rem);
+  gap: 6rem;
+
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 3vw, 2rem);
+  padding: 0 15px;
+
   flex-wrap: wrap;
 }
 
@@ -160,60 +136,60 @@ img {
 
 .about-img {
   flex: 1;
-  min-width: min(300px, 100%);
+  min-width: 300px;
 }
 
 .about-img img {
   width: 100%;
   display: block;
 }
-
 .about-content {
   flex: 1.2;
-  min-width: min(300px, 100%);
+  min-width: 300px;
+}
 
-  h1 {
-    font-family: dm sans, sans-serif;
-    font-weight: 600;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: clamp(1rem, 2.5vw, 1.25rem);
-  }
+.about-content h1 {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
 
-  p {
-    margin-bottom: clamp(1rem, 2.5vw, 1.25rem);
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    font-family: belleza;
-    font-weight: 100;
-    color: #555555;
-    line-height: 1.6;
-  }
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-family: belleza;
+  font-weight: 100;
+  color: #555555;
+  line-height: 28px;
 }
 
 .about-button button {
   font-family: "Oswald", sans-serif;
   font-weight: 600;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: 16px;
   text-transform: uppercase;
   color: #ffffff;
   border: none;
-  padding: clamp(10px, 1.5vw, 13px) clamp(30px, 4vw, 40px);
+  padding: 13px 40px;
   border-radius: 0px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 15px;
 }
 
-/* Hero Carousel */
+/* ? Hero Carousel */
 .carousel-container {
-  /* max-width: min(800px, 90vw); */
+  max-width: 800px;
   position: relative;
   margin: auto;
   overflow: hidden;
 }
 
+/* Slides */
 .slide {
   display: none;
-  /* width: 100%; */
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -228,7 +204,9 @@ img {
 }
 
 .slide img {
-  width: 100vw;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
 
 /* Navigation Buttons */
@@ -238,11 +216,11 @@ img {
   position: absolute;
   top: 50%;
   width: auto;
-  padding: clamp(12px, 2vw, 16px);
+  padding: 16px;
   margin-top: -22px;
   color: white;
   font-weight: bold;
-  font-size: clamp(18px, 3vw, 24px);
+  font-size: 24px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -260,7 +238,7 @@ img {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Indicators */
+/* Indicators (dots) */
 .indicators {
   text-align: center;
   padding: 10px 0;
@@ -268,8 +246,8 @@ img {
 
 .dot {
   cursor: pointer;
-  height: clamp(12px, 1.5vw, 15px);
-  width: clamp(12px, 1.5vw, 15px);
+  height: 15px;
+  width: 15px;
   margin: 0 5px;
   background-color: #bbb;
   border-radius: 50%;
@@ -281,66 +259,65 @@ img {
   background-color: #717171;
 }
 
-/* Vision Section */
+/* ? Vision */
 #vision {
   text-align: center;
-  margin-block: clamp(3rem, 8vw, 5rem);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 
   h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: 3rem;
     font-weight: 700;
   }
 
   p {
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-size: 1.5rem;
     margin-top: 1rem;
   }
 }
 
 .vision {
-  padding: clamp(2rem, 5vw, 3rem) clamp(2rem, 10vw, 9rem);
+  padding: 3rem 9rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(2rem, 6vw, 5rem);
+  gap: 5rem;
 }
 
 .part {
-  flex: 1;
-  min-width: min(300px, 100%);
+  width: 50%;
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: clamp(0.8rem, 1.5vw, 1.2rem);
+  border: 1px solid black;
+  border-radius: 1.2rem;
   text-align: center;
-  padding: clamp(1.5rem, 3vw, 2rem);
+  padding: 2rem;
 }
 
 .icon {
   margin-bottom: 20px;
-  width: clamp(4rem, 8vw, 6rem);
-}
-
-.left h3,
-.right h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 600;
+  width: 6rem;
 }
 
 .left,
 .right {
   padding: 1rem 2rem;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
 }
 
-/* Products Section */
+/* ? Products Section */
 #products {
-  padding: 0 clamp(1rem, 4vw, 3rem);
+  padding: 0 3rem;
 
   h1 {
     font-family: abel, sans-serif;
     font-weight: 800;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: 2.5rem;
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -348,17 +325,18 @@ img {
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: clamp(1rem, 2vw, 1.5rem);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
   margin-top: 2rem;
 }
 
 .product-card {
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: clamp(12px, 2vw, 16px);
+  padding: 16px;
   text-align: center;
-  min-height: clamp(400px, 50vh, 70vh);
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -366,12 +344,13 @@ img {
 }
 
 .product-card img {
-  height: clamp(15rem, 25vw, 20rem);
-  object-fit: contain;
+  height: 20rem;
+  background-position: center;
+  background-position: center;
 }
 
 .product-card h3 {
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-size: 1.3rem;
   font-weight: 800;
   margin: 12px 0;
   color: #283851;
@@ -382,23 +361,26 @@ img {
 .product-card a {
   text-decoration: none;
   color: white;
-  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(1.5rem, 3vw, 2rem);
+  padding: 0.5rem 2rem;
   border-radius: 0.3rem;
   background-color: #046e7ae0;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .product-card a:hover {
-  background-color: #03525c;
-  color: white;
+  color: #03525c;
 }
 
-/* Footer */
+/* ? Footer Styles */
+
+/* =============================
+   FOOTER STYLING (Fixed Layout)
+============================= */
 .site-footer {
   background: #ffffff;
   color: #555;
-  padding: clamp(40px, 8vw, 60px) 0 30px;
+  padding: 60px 0 30px;
   border-top: 1px solid #e5e5e5;
   font-family: "Poppins", sans-serif;
 }
@@ -411,13 +393,13 @@ img {
 
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: clamp(20px, 5vw, 40px);
+  grid-template-columns: 1.2fr 1fr 1.2fr 1.6fr;
+  gap: 40px;
   align-items: flex-start;
 }
 
 .footer-col h4 {
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-size: 1.1rem;
   color: #2d859e;
   margin-bottom: 20px;
   font-weight: 600;
@@ -434,7 +416,7 @@ img {
 .footer-col ul li a {
   text-decoration: none;
   color: #555;
-  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  font-size: 0.95rem;
   transition: color 0.3s ease;
 }
 
@@ -444,26 +426,25 @@ img {
 
 /* Logo & Social */
 .footer-logo {
-  width: clamp(120px, 20vw, 160px);
+  width: 160px;
   margin-bottom: 25px;
 }
 
 .social-links {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
 }
 
 .social-links a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: clamp(32px, 5vw, 36px);
-  height: clamp(32px, 5vw, 36px);
+  width: 36px;
+  height: 36px;
   background: #2d859e;
   color: #fff;
   border-radius: 6px;
-  font-size: clamp(14px, 2vw, 16px);
+  font-size: 16px;
   transition: background 0.3s;
 }
 
@@ -481,14 +462,14 @@ img {
 
 .footer-col.contact i {
   color: #2d859e;
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-size: 1rem;
   margin-top: 3px;
   width: 20px;
   text-align: center;
 }
 
 .footer-col.contact p {
-  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;
 }
@@ -504,7 +485,7 @@ img {
   text-align: center;
   padding: 20px 0;
   color: #333;
-  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  font-size: 0.9rem;
 }
 
 .footer-bottom a {
@@ -517,21 +498,24 @@ img {
   text-decoration: underline;
 }
 
-/* Simplified Media Queries - Most responsive work now handled by clamp() */
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 30px;
+  }
+}
+
 @media (max-width: 600px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
   .footer-col {
     text-align: center;
   }
 
   .footer-col.contact ul li {
     justify-content: center;
-  }
-  
-  .vision {
-    flex-direction: column;
-  }
-  
-  .part {
-    width: 100%;
   }
 }
