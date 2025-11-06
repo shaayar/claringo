@@ -4,239 +4,577 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claringo</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Import Google Fonts: Oswald and Poppins -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <!-- FONT IMPORTS (Place in your HTML <head>) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <!-- FONT IMPORTS END -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&family=Poppins:wght@400&display=swap"
-    rel="stylesheet" />
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <title>Clarnigo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-  <header>
-    <nav>
-      <img src="./images/logo.png" alt="logo" />
+  <!-- Header -->
+  <section>
+    <div class="container">
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-sticky fixed-top py-2">
+          <div class="container-fluid container-lg">
+            <!-- Logo -->
+            <a class="navbar-brand" href="https://clarnigo.com/">
+              <!-- Using the same logo source, added an onerror fallback placeholder -->
+              <img src="https://clarnigo.com/wp-content/uploads/2024/05/Logo-New.webp" alt="Clarnigo Logo" />
+              <!-- loading="lazy" -->
+            </a>
 
-      <!-- Hamburger Menu -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+            <!-- Mobile Toggler Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Products</a>
-          <div class="dropdown-content cl-blue">
-            <a href="#">Micro Pulverizer</a>
-            <a href="#">Heavy Pulverizer with Cyclone</a>
-            <a href="#">Masala Pulverizer</a>
-            <a href="#">Masala Grading Machine</a>
-            <a href="#">Onion Cutting Machine</a>
-            <a href="#">Gravy Machine</a>
-            <a href="#">Flour Mixing Machine</a>
-            <a href="#">Multi Grain Seeds Cleaning Plant</a>
-            <a href="#">Multipurpose Combo Machine</a>
-            <a href="#">Packing Machine</a>
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+              <ul class="navbar-nav g-4">
+                <!-- Home -->
+                <li class="nav-item">
+                  <a class="nav-link active fw-semibold fs-4" style="font-family: belleza, sans-serif"
+                    aria-current="page" href="https://clarnigo.com/">Home</a>
+                </li>
+                <!-- About Us -->
+                <li class="nav-item">
+                  <a class="nav-link fw-semibold fs-4" href="https://clarnigo.com/about-us/">About Us</a>
+                </li>
+
+                <!-- Products Dropdown (Multi-Level) -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle fs-4" href="#" id="productsDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Products
+                  </a>
+                  <ul class="dropdown-menu border-0 shadow-sm rounded-3" aria-labelledby="productsDropdown">
+                    <!-- Dropdown Submenu: MICRO PULVERIZER -->
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">MICRO PULVERIZER</a>
+                      <ul class="dropdown-menu border-0 shadow-sm rounded-3">
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/3-hp-micro-pulverizer/">3 HP (CGP0031)</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Dropdown Submenu: HEAVY PULVERIZER WITH CYCLONE -->
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">HEAVY PULVERIZER WITH CYCLONE</a>
+                      <ul class="dropdown-menu border-0 shadow-sm rounded-3">
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/5-hp-heavy-pulverizer-with-cyclone/">5 HP
+                            (CGPC0053)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/7-5-hp-heavy-pulverizer-with-cyclone/">7.5
+                            HP (CGPC00757)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/10-hp-heavy-pulverizer-with-cyclone/">10
+                            HP (CGPC00103)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/20-hp-heavy-pulverizer-with-cyclone/">20
+                            HP (CGPC00203)</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Dropdown Submenu: MASALA PULVERIZER -->
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">MASALA PULVERIZER</a>
+                      <ul class="dropdown-menu border-0 shadow-sm rounded-3">
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/5-hp-masala-pulverizer/">5 HP
+                            (CGMC00503)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/7-5-hp-masala-pulverizer/">7.5 HP
+                            (CGMC007003)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/10-hp-masala-pulverizer/">10 HP
+                            (CGMC001003)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/20-hp-masala-pulverizer/">20 HP
+                            (CGPMC002003)</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Regular Links within Products -->
+                    <li>
+                      <a class="dropdown-item" href="https://clarnigo.com/masala-grinding-machine/">MASALA GRADING
+                        MACHINE</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="https://clarnigo.com/onion-cutting-machine/">ONION CUTTING
+                        MACHINE</a>
+                    </li>
+
+                    <!-- Dropdown Submenu: GRAVY MACHINE -->
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">GRAVY MACHINE</a>
+                      <ul class="dropdown-menu border-0 shadow-sm rounded-3">
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/2-hp-super-heavy-gravy-machine/">2 HP
+                            (SUPER HEAVY)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/3-hp-jumbo-gravy-machine/">3 HP
+                            (JUMBO)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/5-hp-gravy-machine/">5 HP (GRAVY)</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/7-hp-gravy-machine/">7 HP (GRAVY)</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- Dropdown Submenu: FLOUR MIXING MACHINE (DOUGH KNEADER) -->
+                    <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#">FLOUR MIXING MACHINE (DOUGH KNEADER)</a>
+                      <ul class="dropdown-menu border-0 shadow-sm rounded-3">
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/5-kg-aata-maker/">5 KG – AATA MAKER</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/10-kg-aata-maker/">10 KG – AATA MAKER</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/15-kg-aata-maker/">15 KG – AATA MAKER</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/20-kg-aata-maker/">20 KG – AATA MAKER</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="https://clarnigo.com/25-kg-aata-maker/">25 KG – AATA MAKER</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <!-- More Regular Links within Products -->
+                    <li>
+                      <a class="dropdown-item" href="https://clarnigo.com/multi-grain-seeds-cleaning-plant/">MULTI GRAIN
+                        SEEDS CLEANING PLANT</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="https://clarnigo.com/multipurpose-combo-machine/">MULTIPURPOSE
+                        COMBO MACHINE</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="https://clarnigo.com/packing-machine/">PACKING MACHINE</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Gallery Dropdown -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle fs-4" href="#" id="galleryDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Gallery
+                  </a>
+                  <ul class="dropdown-menu border-0 shadow-sm rounded-3" aria-labelledby="galleryDropdown">
+                    <li>
+                      <a class="dropdown-item" href="https://clarnigo.com/events/">EVENTS</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- Contact Us -->
+                <li class="nav-item">
+                  <a class="nav-link fs-4" href="https://clarnigo.com/contact-us/">Contact Us</a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn">Gallery</a>
-          <div class="dropdown-content">
-            <a href="#">Events</a>
-          </div>
-        </li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Carousel -->
-  <section id="carousel">
-    <div class="carousel-container"></div>
-
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
-
-    <div class="indicators"></div>
+        </nav>
+      </header>
+    </div>
   </section>
 
-  <section class="about-section">
-    <div class="about-container">
-      <div class="about-img">
-        <!-- Using the image from the original site -->
-        <img src="./images/spices.png" alt="Spices and grains" />
-      </div>
-      <div class="about-content">
-        <h1 class="cl-blue">ABOUT CLARNIGO MACHINES MFG. PVT. LTD</h1>
+  <!-- Hero Carousel -->
+  <section>
+    <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/slide-1.png"
+                    class="d-block w-100" alt="Slide 1">
+                </div>
 
-        <p>
-          CLARNIGO MACHINES MFG. PVT. LTD.is well-known brand having two
-          Directors Mr. Rajdeepsinh Gohil and Mr. Anil Chauhan. Since 2019 has
-          started journey from Rajkot (Gujarat), we are leading manufacturer
-          of Commercial Pulverizer, Domestic Flourmill, Gravy Machine, Packing
-          Machine, Cleaning Machine and Food Processing Machineries etc.
-        </p>
+                <div class="carousel-item">
+                  <img src="images/slide-2.png"
+                    class="d-block w-100" alt="Slide 2">
+                </div>
 
-        <p>
-          All our products are extremely robust and highly durable as well. We
-          also provide customized solutions to our customers and we are
-          committed to provide best support and service to our customers with
-          highly qualified and efficient team of professionals.
-        </p>
+                <div class="carousel-item">
+                  <img src="images/slide-3.png"
+                    class="d-block w-100" alt="Slide 4">
+                </div>
 
-        <p>
-          All our products are Govt. certified under CE and ISO 9001:2015
-          certification. All our products are operation friendly, value for
-          money and cost efficient. Our goal is to have a long-term
-          association with our customers.
-        </p>
+                <div class="carousel-item">
+                  <img src="images/slide-4.png"
+                    class="d-block w-100" alt="Slide 3">
+                </div>
 
-        <p>
-          We belong to a socially rich and financially sound business house
-          especially in manufacturing of wide range of Pulverizers and Milling
-          Machines.
-        </p>
+                <div class="carousel-item">
+                  <img src="images/slide-5.png"
+                    class="d-block w-100" alt="Slide 3">
+                </div>
 
-        <div class="about-button">
-          <button class="cl-dark-blue">Company Profile</button>
+
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true">
+                </span>
+                <span class="visually-hidden">
+                  Previous
+                </span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true">
+                </span>
+                <span class="visually-hidden">
+                  Next
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="vision">
-    <h2 class="cl-blue">Mission and Vision</h2>
-    <p>Turning Challenges into fine solutions</p>
-    <div class="vision">
-      <div class="left part">
-        <img src="./images/icon-1.png" alt="icon" class="icon" />
-        <h3 class="cl-blue">Our Mission</h3>
-        <p data="cl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-          est! Itaque illum consequuntur, aliquid minima a exercitationem
-          provident veritatis nobis dolorum odit labore earum distinctio neque
-          numquam sequi accusamus doloribus delectus animi?
-        </p>
-      </div>
-      <div class="right part">
-        <img src="./images/icon-2.png" alt="icon" class="icon" />
-        <h3 class="cl-blue">Our Vision</h3>
-        <p data="cl">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ratione velit, quisquam et commodi exercitationem veritatis molestiae. Recusandae temporibus, pariatur beatae aliquid numquam porro sed quidem. Explicabo officia necessitatibus vel sapiente labore!
-        </p>
-      </div>
+  <!-- About Us -->
+
+  <section>
+    <div class="container">
+      <main class="container my-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-md-4 text-center">
+            <img decoding="async" src="https://clarnigo.com/wp-content/uploads/2025/05/Footjet-1.webp"
+              class="img-fluid rounded-3" alt="Clarnigo Footjet Machine" height="30" />
+          </div>
+
+          <div class="col-md-8">
+            <h1 class="about-title">
+              ABOUT CLARNIGO <br />
+              MACHINES MFG. PVT. LTD
+            </h1>
+
+            <p class="mt-3 fs-5 about-content">
+              CLARNIGO MACHINES MFG. PVT. LTD. is a well-known brand having
+              two Directors Mr. Rajdeepsinh Gohil and Mr. Anil Chauhan. Since
+              2019 has started journey from Rajkot (Gujarat), we are
+              manufacturer of Commercial Pulverizer, Domestic Flourmill, Gravy
+              Machine, Packing Machine, Cleaning Machine and Food Processing
+              Machineries etc.
+            </p>
+            <p class="fs-5 about-content">
+              All our products are extremely robust and highly durable as
+              well. We also provide customized solutions to our customers and
+              we are committed to provide best support and service to our
+              customers with highly qualified and efficient team of
+              professionals.
+            </p>
+            <p class="fs-5 about-content">
+              All our products are Govt. certified under CE and ISO 9001:2015
+              certification. All our products are operation friendly, value
+              for money and cost efficient. Our goal is to have a long-term
+              association with our customers.
+            </p>
+            <p class="fs-5 about-content">
+              We belong to a socially rich and financially sound business
+              house especially in manufacturing of wide range of Pulverizers
+              and Milling Machines.
+            </p>
+
+            <a class="btn btn-primary btn-lg mt-3"
+              href="https://clarnigo.com/wp-content/uploads/2024/05/Clarnigo-Machines.pdf" target="_blank"
+              style="background-color: var(--cl-dblue); border: none">
+              <i class="fas fa-download me-2"></i>
+              Company Profile
+            </a>
+          </div>
+        </div>
+      </main>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="products">
-    <h1 class="cl-blue">OUR PRODUCTS</h1>
-    <p>Crush, Grind, Excel: Our Pulverizers, Your Success</p>
-
-    <div class="products-container"></div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-columns">
-        <!-- Column 1: Logo & Social -->
-        <div class="footer-col about">
-          <img src="images/logo.png" alt="Clarnigo Logo" class="footer-logo" />
-          <h4>Follow Us</h4>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
+  <!-- Products -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="fw-bold our-mission">Mission and Vision</h2>
+          <h4 class="fw-normal text-muted">
+            Turning Challenges into fine solutions
+          </h4>
         </div>
+      </div>
 
-        <!-- Column 2: Explore -->
-        <div class="footer-col links">
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6 col-lg-5">
+          <div class="card shadow-sm rounded-3 h-100 text-center">
+            <div class="card-body p-4 p-md-5">
+              <img src="images/icon-1.png" alt="icon 1" height="90px" class="mb-2" />
+              <h3 class="card-title our-mission">Our Mission</h3>
 
-        <!-- Column 3: Our Products -->
-        <div class="footer-col links">
-          <h4>Our Products</h4>
-          <ul>
-            <li><a href="#">Micro Pulverizer</a></li>
-            <li><a href="#">Heavy Pulverizer with Cyclone</a></li>
-            <li><a href="#">Masala Pulverizer</a></li>
-            <li><a href="#">Masala Grading Machine</a></li>
-            <li><a href="#">Onion Cutting Machine</a></li>
-            <li><a href="#">Gravy Machine</a></li>
-            <li><a href="#">Flour Mixing Machine<br>(Dough Kneader)</a></li>
-            <li><a href="#">Multi Grain Seeds Cleaning Plant</a></li>
-            <li><a href="#">Multipurpose Combo Machine</a></li>
-            <li><a href="#">Packing Machine</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Contact -->
-        <div class="footer-col contact">
-          <h4>Get In Touch</h4>
-          <ul>
-            <li>
-              <i class="fas fa-map-marker-alt"></i>
-              <p>
-                <strong>Corporate Office</strong><br />
-                328 - RK Empire, Mavdi Circle,<br />
-                Rajkot - 360004, Gujarat (INDIA)
+              <p class="card-text fs-5">
+                Our mission is to provide best quality products to our
+                customers with full satisfaction and timely delivery. We are
+                committed to deliver excellence in every aspect of our
+                business.
               </p>
-            </li>
-            <li>
-              <i class="fas fa-industry"></i>
-              <p>
-                <strong>Factory Address</strong><br />
-                Kissan Gate, R.S.No.255P N.A.Ind. Plot Near Bapa Girnari<br />
-                Weigh Bridge, Shapar - Veraval,<br />
-                360024, Rajkot, Gujrat (IND)
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-5">
+          <div class="card shadow-sm rounded-3 h-100 text-center">
+            <div class="card-body p-4 p-md-5">
+              <img src="images/icon-2.png" alt="icon 2" height="90px" class="mb-2" />
+              <h3 class="card-title our-mission">Our Vision</h3>
+
+              <p class="card-text fs-5">
+                Our vision is to be a leading manufacturer and supplier of
+                food processing machineries in India and globally. We aim to
+                achieve this by continuously improving our products and
+                services, investing in research and development, and building
+                strong relationships with our customers.
               </p>
-            </li>
-            <li>
-              <i class="fas fa-phone-alt"></i>
-              <p>+91 75750 92592</p>
-            </li>
-            <li>
-              <i class="fas fa-envelope"></i>
-              <p>info@clarnigo.com</p>
-            </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="mx-auto border-1 border-black">
+        <h1 class="our-mission">OUR PRODUCTS</h1>
+        <p>Crush, Grind, Excel: Our Pulverizers, Your Success</p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card p-4" style="width: 18rem">
+            <img src="images/product-1.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Micro Pulverizer</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card p-4" style="width: 18rem">
+            <img src="images/product-2.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Heavy Pulverizer with Cyclone</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card p-4" style="width: 18rem">
+            <img src="images/product-3.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Masala Pulverizer</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card p-4" style="width: 18rem">
+            <img src="images/product-4.png" class="card-img-top mt-5 pt-2" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Masala Grading Machine</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="row">
+        <div class="col">
+          <div class="card p-4" style="width: 18rem">
+            <img src="images/product-5.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Onion Cutting Machine</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card p-4" style="width: 18rem">
+            <img src="images/product-6.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Gravy Machine</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card p-4" style="width: 18rem">
+            <img src="images/product-7.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto card-text-bottom">
+              <h5 class="card-title">Flour Mixing Machine</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card p-4" style="width: 18rem">
+            <img src="images/product-8.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Multi Grain Seeds Cleaning Machine</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img src="images/product-9.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Multipurpose Combo Machine</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img src="images/product-10.png" class="card-img-top" alt="..." />
+            <div class="card-body mx-auto">
+              <h5 class="card-title">Packing Machine</h5>
+              <a href="#" class="btn btn-custom-color">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <!-- Company Logo and Social Links -->
+          <img src="https://clarnigo.com/wp-content/uploads/2024/05/Logo-New.webp" alt="Clarnigo Logo"
+            class="footer-logo" />
+          <h5 class="mt-4" style="color: #4a90a4; font-size: 20px">
+            Follow Us
+          </h5>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <!-- </div> -->
+
+        <!-- Explore Links -->
+        <div class="col">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h3 class="footer-heading" data="link">Explore</h3>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Our Products -->
+        <div class="col col-lg-3 col-md-6 mb-4">
+          <h3 class="footer-heading" data="link">Our Products</h3>
+          <ul class="footer-links">
+            <li><a href="#">MICRO PULVERIZER</a></li>
+            <li><a href="#">HEAVY PULVERIZER WITH CYCLONE</a></li>
+            <li><a href="#">MASALA PULVERIZER</a></li>
+            <li><a href="#">MASALA GRADING MACHINE</a></li>
+            <li><a href="#">ONION CUTTING MACHINE</a></li>
+            <li><a href="#">GRAVY MACHINE</a></li>
+            <li><a href="#">FLOUR MIXING MACHINE (DOUGH KNEADER)</a></li>
+            <li><a href="#">MULTI GRAIN SEEDS CLEANING PLANT</a></li>
+            <li><a href="#">MULTIPURPOSE COMBO MACHINE</a></li>
+            <li><a href="#">PACKING MACHINE</a></li>
           </ul>
+        </div>
+
+        <!-- Get In Touch -->
+        <div class="col-lg-3 col col-md-6 mb-4">
+          <h3 class="footer-heading">Get In Touch</h3>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Corporate Office</strong><br />
+              328 - RK Empire, Mavdi Circle,<br />
+              Rajkot - 360004, Gujarat (INDIA)
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-building"></i>
+            <div>
+              <strong>Factory Address</strong><br />
+              Kissan Gate, R.S.No.255P<br />
+              N.A.Ind. Plot Near Bapa Girnari<br />
+              Weigh Bridge, Shapar - Veraval,<br />
+              360024, Rajkot, Gujrat (IND)
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div><a href="tel:+917575092592">+91 75750 92592</a></div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <a href="mailto:info@clarnigo.com">info@clarnigo.com</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Sub-Footer -->
+    <!-- Footer Bottom -->
     <div class="footer-bottom">
-      <p>
+      <div class="container">
         © 2023 Clarnigo Machines Mfg Pvt Ltd All Rights Reserved | Developed
-        By :
-        <a href="#">Dcoded Innovations LLP</a>
-      </p>
+        By : <a href="#">Dcoded Innovations LLP</a>
+      </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/917575092592" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

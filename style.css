@@ -1,0 +1,330 @@
+@font-face {
+  font-family: abel;
+  src: url(./fonts/abel-mwq5bhbm2poe2v9bpq.woff2);
+}
+@font-face {
+  font-family: dm sans;
+  src: url(./fonts/dmsans-rp2yp2ywxg089urii5-g4vlh9vod8cmcqbu0-k4.woff2);
+}
+@font-face {
+  font-family: belleza;
+  src: url(./fonts/belleza-0nkoc9_pnemfhx4bhch4ag.woff2);
+}
+@font-face {
+  font-family: montserrat;
+  src: url(./fonts/montserrat-jtusjig1_i6t8kchkm459wlhyw.woff2);
+}
+@font-face {
+  font-family: roboto;
+  src: url(./fonts/roboto-kfo7cnqeu92fr1me7ksn66agldtyluama3yuba.woff2);
+}
+
+:root {
+  --cl-blue: #2d859e;
+  --cl-dblue: #283851;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Body Padding - adjusted for average sticky height */
+body {
+  padding-top: 80px; /* Space for the sticky navbar */
+  background-color: #f8f9fa;
+}
+
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+/* Styling for the sticky navbar */
+.navbar-sticky {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto; /* Allow height to adjust naturally */
+  min-height: 70px; /* Minimum height for better visibility */
+  transition: all 0.3s ease;
+}
+
+/* Logo sizing */
+.navbar-brand img {
+  height: 40px; /* Base height */
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+/* Responsive adjustment for header elements */
+@media (min-width: 992px) {
+  .navbar-sticky {
+    height: 10vh;
+    min-height: 80px;
+  }
+  .navbar-brand img {
+    height: 50px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* --- About Section Responsiveness --- */
+/* ---------------------------------------------------- */
+
+.about-title {
+  color: var(--cl-blue);
+  font-family: dm sans;
+  font-size: 2rem; /* Smaller default size for mobile */
+  font-weight: 700; /* Made bolder for emphasis on small screens */
+  line-height: 1.2;
+}
+
+.about-content {
+  font-family: belleza, sans-serif;
+  font-size: 1.1rem; /* Adjusted default size */
+  width: auto; /* Removed fixed 50rem width for responsiveness */
+}
+
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 3rem; /* Medium screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .about-title {
+    font-size: 3.5rem; /* Large screens */
+  }
+  .about-content {
+    font-size: 1.25rem;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* --- Product Cards Responsiveness (Section 4) --- */
+/* ---------------------------------------------------- */
+
+.card {
+  height: auto !important; /* IMPORTANT: Removed fixed 32vw height */
+  margin-bottom: 20px; /* Ensure spacing on small screens */
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: contain;
+    padding: 15px;
+}
+
+/* Ensure product image in card is responsive */
+.card-body.mx-auto {
+    text-align: center;
+}
+
+/* Adjust card text bottom positioning if needed */
+.card-body.mx-auto.card-text-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* This is where you target the product row to handle wrapping */
+#product-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ---------------------------------------------------- */
+/* --- Mission/Vision Cards Responsiveness --- */
+/* ---------------------------------------------------- */
+.card.h-100 {
+    min-height: 250px;
+}
+.our-mission {
+  color: var(--cl-blue) !important;
+}
+
+/* ---------------------------------------------------- */
+/* --- Multi-Level Dropdown Styles (Desktop) --- */
+/* ---------------------------------------------------- */
+@media all and (min-width: 992px) {
+  .navbar .dropdown-menu {
+    display: none;
+    margin-top: 0;
+  }
+  .navbar .dropdown-menu.show {
+    display: block;
+  }
+  .navbar .dropdown-item {
+    font-size: 0.95rem;
+  }
+
+  /* First level dropdown on hover */
+  .navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  /* Nested (second level) dropdowns */
+  .navbar .dropdown-submenu {
+    position: relative;
+  }
+  .navbar .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+  }
+  /* Nested level on hover */
+  .navbar .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+  }
+
+  /* Chevron icon for nested menus */
+  .dropdown-submenu > a:after {
+    content: "\25B6"; /* Right triangle icon */
+    float: right;
+    margin-left: 6px;
+    font-size: 0.7em;
+    color: #6c757d;
+  }
+}
+
+/* Mobile Dropdown Chevron (for visual consistency, although Bootstrap handles the toggle) */
+@media (max-width: 991px) {
+  .dropdown-submenu .dropdown-menu {
+    position: static;
+    float: none;
+  }
+  /* Add padding to show the nested levels clearly on mobile */
+  .dropdown-submenu .dropdown-item {
+    padding-left: 2rem !important;
+  }
+}
+
+/* Animation for smooth dropdown appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-custom-color {
+  background-color: var(--cl-dblue) !important;
+  color: white !important;
+}
+
+/* For hover/focus states */
+.btn-custom-color:hover,
+.btn-custom-color:focus {
+  scale: 1.05; /* Smoother scale effect */
+  opacity: 0.9;
+}
+
+/* ---------------------------------------------------- */
+/* --- Footer Section Responsiveness --- */
+/* ---------------------------------------------------- */
+
+.footer-section {
+  background-color: #f8f9fa;
+  padding: 40px 0 10px;
+
+  a{
+    color: black;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .footer-heading[data="link"] {
+    padding-left: 2rem;
+  }
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+/* Adjust grid structure for the footer using Bootstrap columns */
+.footer-section .row > div {
+    margin-bottom: 30px; /* Added margin for stacking on mobile */
+}
+
+@media (min-width: 992px) {
+  .footer-logo {
+    max-width: 200px; /* Larger logo on desktop */
+  }
+  .footer-section .row > div {
+    margin-bottom: 0;
+  }
+}
+
+.footer-heading {
+  color: #4a90a4;
+  font-size: 24px; /* Slightly smaller for all screens */
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: 'dm sans', sans-serif; /* Consistent font */
+}
+
+.footer-links li {
+  margin-bottom: 8px; /* Tighter spacing */
+}
+
+.contact-item {
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+  background-color: var(--cl-dblue); 
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  bottom: 20px; 
+  right: 20px;
+  padding: 10px 15px;
+  gap: 8px;
+  font-size: 14px;
+  position: fixed;
+  background-color: green;
+  color: white;
+  border-radius: 3rem;
+}
+
+.whatsapp-float i {
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .whatsapp-float {
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 20px;
+  }
+  .whatsapp-float span {
+    display: inline; /* Show text on larger screens */
+  }
+  .whatsapp-float i {
+    font-size: 24px;
+  }
+}

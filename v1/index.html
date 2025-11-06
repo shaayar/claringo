@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claringo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <img src="./images/logo.png" alt="logo" />
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Products</a>
+            <div class="dropdown-content cl-blue">
+              <a href="#">Micro Pulverizer</a>
+              <a href="#">Heavy Pulverizer with Cyclone</a>
+              <a href="#">Masala Pulverizer</a>
+              <a href="#">Masala Grading Machine</a>
+              <a href="#">Onion Cutting Machine</a>
+              <a href="#">Gravy Machine</a>
+              <a href="#">Flour Mixing Machine</a>
+              <a href="#">Multi Grain Seeds Cleaning Plant</a>
+              <a href="#">Multipurpose Combo Machine</a>
+              <a href="#">Packing Machine</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Gallery</a>
+            <div class="dropdown-content">
+              <a href="#">Events</a>
+            </div>
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Carousel -->
+    <section id="carousel">
+      <div class="carousel-container"></div>
+
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+      <div class="indicators"></div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-img">
+          <!-- Using the image from the original site -->
+          <img src="./images/spices.png" alt="Spices and grains" />
+        </div>
+        <div class="about-content">
+          <h1 class="cl-blue">ABOUT CLARNIGO MACHINES MFG. PVT. LTD</h1>
+
+          <p>
+            CLARNIGO MACHINES MFG. PVT. LTD.is well-known brand having two
+            Directors Mr. Rajdeepsinh Gohil and Mr. Anil Chauhan. Since 2019 has
+            started journey from Rajkot (Gujarat), we are leading manufacturer
+            of Commercial Pulverizer, Domestic Flourmill, Gravy Machine, Packing
+            Machine, Cleaning Machine and Food Processing Machineries etc.
+          </p>
+
+          <p>
+            All our products are extremely robust and highly durable as well. We
+            also provide customized solutions to our customers and we are
+            committed to provide best support and service to our customers with
+            highly qualified and efficient team of professionals.
+          </p>
+
+          <p>
+            All our products are Govt. certified under CE and ISO 9001:2015
+            certification. All our products are operation friendly, value for
+            money and cost efficient. Our goal is to have a long-term
+            association with our customers.
+          </p>
+
+          <p>
+            We belong to a socially rich and financially sound business house
+            especially in manufacturing of wide range of Pulverizers and Milling
+            Machines.
+          </p>
+
+          <div class="about-button">
+            <button class="cl-dark-blue">Company Profile</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision">
+      <h2 class="cl-blue">Mission and Vision</h2>
+      <p>Turning Challenges into fine solutions</p>
+      <div class="vision">
+        <div class="left part">
+          <img src="./images/icon-1.png" alt="icon" class="icon" />
+          <h3 class="cl-blue">Our Mission</h3>
+          <p data="cl">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+            est! Itaque illum consequuntur, aliquid minima a exercitationem
+            provident veritatis nobis dolorum odit labore earum distinctio neque
+            numquam sequi accusamus doloribus delectus animi?
+          </p>
+        </div>
+        <div class="right part">
+          <img src="./images/icon-2.png" alt="icon" class="icon" />
+          <h3 class="cl-blue">Our Vision</h3>
+          <p data="cl">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
+            ratione velit, quisquam et commodi exercitationem veritatis
+            molestiae. Recusandae temporibus, pariatur beatae aliquid numquam
+            porro sed quidem. Explicabo officia necessitatibus vel sapiente
+            labore!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+      <h1 class="cl-blue">OUR PRODUCTS</h1>
+      <p>Crush, Grind, Excel: Our Pulverizers, Your Success</p>
+
+      <div class="products-container"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-columns">
+          <!-- Column 1: Logo & Social -->
+          <div class="footer-col about">
+            <img
+              src="images/logo.png"
+              alt="Clarnigo Logo"
+              class="footer-logo"
+            />
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Explore -->
+          <div class="footer-col links">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Our Products -->
+          <div class="footer-col links">
+            <h4>Our Products</h4>
+            <ul>
+              <li><a href="#">Micro Pulverizer</a></li>
+              <li><a href="#">Heavy Pulverizer with Cyclone</a></li>
+              <li><a href="#">Masala Pulverizer</a></li>
+              <li><a href="#">Masala Grading Machine</a></li>
+              <li><a href="#">Onion Cutting Machine</a></li>
+              <li><a href="#">Gravy Machine</a></li>
+              <li>
+                <a href="#">Flour Mixing Machine<br />(Dough Kneader)</a>
+              </li>
+              <li><a href="#">Multi Grain Seeds Cleaning Plant</a></li>
+              <li><a href="#">Multipurpose Combo Machine</a></li>
+              <li><a href="#">Packing Machine</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact -->
+          <div class="footer-col contact">
+            <h4>Get In Touch</h4>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>
+                  <strong>Corporate Office</strong><br />
+                  328 - RK Empire, Mavdi Circle,<br />
+                  Rajkot - 360004, Gujarat (INDIA)
+                </p>
+              </li>
+              <li>
+                <i class="fas fa-industry"></i>
+                <p>
+                  <strong>Factory Address</strong><br />
+                  Kissan Gate, R.S.No.255P N.A.Ind. Plot Near Bapa Girnari<br />
+                  Weigh Bridge, Shapar - Veraval,<br />
+                  360024, Rajkot, Gujrat (IND)
+                </p>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <p>+91 75750 92592</p>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <p>info@clarnigo.com</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Footer -->
+      <div class="footer-bottom">
+        <p>
+          © 2023 Clarnigo Machines Mfg Pvt Ltd All Rights Reserved | Developed
+          By :
+          <a href="#">Dcoded Innovations LLP</a>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
